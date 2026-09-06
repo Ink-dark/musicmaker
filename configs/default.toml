@@ -1,0 +1,17 @@
+# musicmaker 配置文件示例（内容即全部内置默认值）
+# 生效优先级：内置默认 < 本文件 < 谱面指令(@BPM/@VOL/@WAVE) < 命令行参数
+# 放置到当前目录 config.toml 或通过 --config 指定
+
+[keymap]
+# 字符排序表：位置决定音高次序，字符须唯一且不能是保留语法字符(^ _ = . # @)
+char_order = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# 音高表：每个周期内的半音偏移，自 base_midi 起
+pitch_table = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+# 起始音高（MIDI，48 = C3）
+base_midi = 48
+
+# 谱面/渲染默认参数（可被谱面指令覆盖）
+bpm = 120
+volume = 0.8
+wave = "square"
+sample_rate = 44100

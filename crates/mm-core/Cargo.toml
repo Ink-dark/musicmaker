@@ -1,0 +1,11 @@
+[package]
+name = "mm-core"
+version.workspace = true
+edition.workspace = true
+description = "musicmaker 核心：谱面解析、键位映射、合成、渲染"
+
+[dependencies]
+hound = "3"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+thiserror = "2"

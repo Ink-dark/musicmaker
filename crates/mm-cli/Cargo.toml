@@ -1,0 +1,14 @@
+[package]
+name = "mm-cli"
+version.workspace = true
+edition.workspace = true
+description = "musicmaker 命令行入口"
+
+[[bin]]
+name = "mm"
+path = "src/main.rs"
+
+[dependencies]
+mm-core = { path = "../mm-core" }
+clap = { version = "4", features = ["derive"] }
+cpal = "0.15"
