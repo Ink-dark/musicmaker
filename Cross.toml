@@ -1,0 +1,26 @@
+# cross（cross-rs）交叉编译配置：Linux 产物动态链接 glibc 与 ALSA，
+# 构建前为目标架构安装 ALSA 开发包（cpal 经 alsa-sys 链接 libasound）。
+# $CROSS_DEB_ARCH 由 cross 自动注入（amd64 / i386 / armhf / arm64）。
+[target.x86_64-unknown-linux-gnu]
+pre-build = [
+    "dpkg --add-architecture $CROSS_DEB_ARCH",
+    "apt-get update && apt-get --assume-yes install libasound2-dev:$CROSS_DEB_ARCH",
+]
+
+[target.i686-unknown-linux-gnu]
+pre-build = [
+    "dpkg --add-architecture $CROSS_DEB_ARCH",
+    "apt-get update && apt-get --assume-yes install libasound2-dev:$CROSS_DEB_ARCH",
+]
+
+[target.armv7-unknown-linux-gnueabihf]
+pre-build = [
+    "dpkg --add-architecture $CROSS_DEB_ARCH",
+    "apt-get update && apt-get --assume-yes install libasound2-dev:$CROSS_DEB_ARCH",
+]
+
+[target.aarch64-unknown-linux-gnu]
+pre-build = [
+    "dpkg --add-architecture $CROSS_DEB_ARCH",
+    "apt-get update && apt-get --assume-yes install libasound2-dev:$CROSS_DEB_ARCH",
+]
